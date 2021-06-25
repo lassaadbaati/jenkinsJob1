@@ -14,3 +14,30 @@ public class Main {
 '  >/tmp/lassaad/Main.java
 javac /tmp/lassaad/Main.java
 ---------------------------------
+job run
+
+--------------------------
+pipeline
+------------------------
+pipeline {
+    agent any 
+    stages {
+        stage('clone') { 
+            steps {
+                sh "rm -rf *"
+                sh "git clone https://github.com/lassaadbaati/jenkins-helloworld"
+            }
+        }
+        stage('build') { 
+            steps {
+                sh "cd jenkins-helloworld/ && javac Main.java"
+            }
+        }
+        stage('run') { 
+            steps {
+                sh "cd jenkins-helloworld/ && java Main"
+            }
+        }
+    }
+}
+---------------------------------
