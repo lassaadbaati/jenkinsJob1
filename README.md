@@ -1,20 +1,15 @@
 # jenkinsJob1
-jenkinsJob1
+
 scrit à mettre dans le job 
-* retenir le principe pas le fond
 
-* exemple : "Hello World"
+# 3 jobs :
+	- 1-build
+	- 1-run
+	- 1-test
 
-* 3 jobs :
-		- 1-build
-		- 1-run
-		- 1-test
 
---------------------------------------------------------
-
--> BUILD <-
-
-* java (normalement avec git) et on compile
+# BUILD 
+java (normalement avec git) et on compile
 
 
 ```
@@ -32,7 +27,7 @@ javac /tmp/lassaad/Main.java
 
 -------------------------------------------------------
 
--> RUN <-
+# RUN 
 
 * lancement du java avec écriture dans un fichier du résultat
 
@@ -44,15 +39,12 @@ java Main >test.file
 ```
 -------------------------------------------------------
 
--> TEST <-
+# TEST 
 
 
 * dépendant du déclenchement du RUN
-
 * un principe
-
 * on affiche le contenu du fichier test.file (on pourrait faire des tests dessus)
-
 
 ```
 cd /tmp/lassaad/
