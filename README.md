@@ -1,7 +1,22 @@
 # jenkinsJob1
 jenkinsJob1
 scrit à mettre dans le job 
-# job build
+* retenir le principe pas le fond
+
+* exemple : "Hello World"
+
+* 3 jobs :
+		- 1-build
+		- 1-run
+		- 1-test
+
+--------------------------------------------------------
+
+-> BUILD <-
+
+* java (normalement avec git) et on compile
+
+
 ```
 mkdir -p /tmp/lassaad/
 rm -rf /tmp/lassaad/*
@@ -15,8 +30,61 @@ public class Main {
 javac /tmp/lassaad/Main.java
 ```
 
-# job run
+-------------------------------------------------------
 
+-> RUN <-
+
+* lancement du java avec écriture dans un fichier du résultat
+
+* attention dépendance avec le build
+
+```
+cd /tmp/lassaad/
+java Main >test.file
+```
+-------------------------------------------------------
+
+-> TEST <-
+
+
+* dépendant du déclenchement du RUN
+
+* un principe
+
+* on affiche le contenu du fichier test.file (on pourrait faire des tests dessus)
+
+
+```
+cd /tmp/lassaad/
+echo "###### contenu du test.file ######"
+cat test.file
+```
+
+------------------------------------------------
+* modèle : https://jenkins.io/doc/book/pipeline/
+
+```
+pipeline {
+    agent any 
+    stages {
+        stage('Build') { 
+            steps {
+                // 
+            }
+        }
+        stage('Test') { 
+            steps {
+                // 
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                // 
+            }
+        }
+    }
+}
+```
 --------------------------
 # pipeline
 ```
