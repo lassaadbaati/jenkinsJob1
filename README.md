@@ -1,8 +1,8 @@
 # jenkinsJob1
 jenkinsJob1
 scrit à mettre dans le job 
-job build
-------------------------------------
+# job build
+```
 mkdir -p /tmp/lassaad/
 rm -rf /tmp/lassaad/*
 echo '
@@ -13,12 +13,13 @@ public class Main {
 }
 '  >/tmp/lassaad/Main.java
 javac /tmp/lassaad/Main.java
----------------------------------
-job run
+```
+
+# job run
 
 --------------------------
-pipeline
-------------------------
+# pipeline
+```
 pipeline {
     agent any 
     stages {
@@ -40,4 +41,4 @@ pipeline {
         }
     }
 }
----------------------------------
+```
